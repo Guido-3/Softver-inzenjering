@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About_us from './pages/About_us';
 import Not_found from './pages/Not_found';
 import SightsList from './pages/admin/sights/SightsList';
+import CreateSight from './pages/admin/sights/CreateSight';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About_us/>} />
         <Route path='/admin/sights' element={<SightsList/>} />
+        <Route path='/admin/sights/create' element={<CreateSight/>} />
         <Route path='*' element={<Not_found/>} />
       </Routes>
       <Footer/>
