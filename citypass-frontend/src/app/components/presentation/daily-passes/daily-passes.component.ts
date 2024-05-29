@@ -1,4 +1,15 @@
 import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-daily-passes',
+  templateUrl: './daily-passes.component.html',
+  styleUrls: ['./daily-passes.component.scss']
+})
+export class DailyPassesComponent {
+
+}
+/**
+ * import { Component } from '@angular/core';
 import { DailyService } from 'src/app/services/daily.service';
 
 @Component({
@@ -17,3 +28,4 @@ export class DailyPassesComponent {
     })
 }
 }
+ */

@@ -1,19 +1,85 @@
-<h1>Znamenitosti</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrirani Div</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-circle {
+            width: 100px; /* širina kruga */
+            height: 100px; /* visina kruga */
+            background-color: red; /* boja kruga */
+            border-radius: 50%; /* krug */
+        }
+        .slika{
+            border-radius: 10px;
+            height: 300px;
+        }
+        .slika3{
+            border-radius: 10px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 ">
+        <div>
+            <div class="container text-white py-5">
+                <div class="text-dark text-center mb-4">
+                    <h2 class="text">Kotor Fortress</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center">
+                        <img src="../../../../assets/images/slika7.png" class="slika" />               
+                    </div>
+                    <div class="text-dark col-md-6">
+                        <p>Nestled in the heart of Montenegro, the historic city of Kotor boasts one of the most impressive and well-preserved fortification systems in the Mediterranean. The Walls of Kotor, also known as the Kotor Fortress, are a monumental feat of architecture and engineering that have stood the test of time, offering a glimpse into the city’s storied past.
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Naziv</th>
-            <th>Opis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let z of znamenitosti">
-            <td>{{z.id}}</td>
-            <td>{{z.ime}}</td>
-            <td>{{z.opis}}</td>
-        </tr>
-    </tbody>
-</table>
+                            Spanning approximately 4.5 kilometers (2.8 miles) and rising to an elevation of 260 meters (853 feet) above sea level, the walls encircle the Old Town of Kotor and climb steeply up the slopes of Mount Lovćen. Construction of the fortifications began in the 9th century and continued through various periods, reaching its zenith during the Venetian rule from the 15th to the 17th century.</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="text-dark col-md-6">
+                        <p>The walls are punctuated by bastions, towers, and gates, each with its own unique history and significance. The Sea Gate, the main entrance to the Old Town, dates back to 1555 and serves as a testament to the city’s maritime heritage. The River Gate, or the North Gate, offers another impressive entrance, while the Gurdic Gate, or the South Gate, is renowned for its strategic importance.
+
+                            One of the most striking features of the Kotor Fortress is the San Giovanni Castle, perched high above the city. A steep and winding path of over 1,300 steps leads visitors to this vantage point, offering breathtaking panoramic views of the Bay of Kotor and the surrounding mountains. The climb is challenging but rewarding, as the view from the top is truly unparalleled.</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="../../../../assets/images/slika8.png" class="slika" />               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container text-white py-5">
+                <div class="text-dark text-center mb-4">
+                    <h2 class="text">Kotor Fortress</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center">
+                        <img src="../../../../assets/images/slika9.png" class="slika" />               
+                    </div>
+                    <div class="text-dark col-md-6">
+                        <p>Nestled within the historic city walls of Kotor, Montenegro, the Kotor Museum, also known as the Maritime Museum of Montenegro, offers a captivating journey through the region's rich maritime heritage and cultural history. Housed in the elegant Baroque Grgurina Palace, the museum stands as a testament to Kotor’s long-standing relationship with the sea and its significant role in Adriatic maritime history.
+
+                            The museum's collection includes an impressive array of artifacts, ranging from ancient navigational instruments and ship models to intricate maritime maps and detailed records of naval battles. Each exhibit tells a unique story of the city's seafaring past, showcasing the skills and craftsmanship of Kotor's sailors, shipbuilders, and navigators.</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="text-dark col-md-6">
+                        <p>Visitors to the museum can explore several floors of meticulously curated exhibits. The ground floor features a collection of historic ship models, providing insight into the evolution of naval architecture and the types of vessels that once sailed the Adriatic Sea. The first floor houses an array of navigational tools and equipment, highlighting the technological advancements that made long-distance sea travel possible.
+
+                            One of the museum's most fascinating sections is dedicated to the lives of Kotor's illustrious sea captains and their daring exploits. Portraits, personal belongings, and detailed logs offer a glimpse into the lives of these maritime adventurers and their contributions to the city's prosperity.</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="../../../../assets/images/slika10.png" class="slika" />               
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
 

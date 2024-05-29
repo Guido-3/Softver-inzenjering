@@ -1,3 +1,17 @@
+import { Component } from '@angular/core';
+import { SightsService } from 'src/app/services/sights.sevice';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
+})
+export class HomeComponent {
+  noOfClicks = 0;
+  angularConcepts = ['Components', 'Routing', 'Services', 'Guards', 'Interceptors'];
+}
+
+/*
 import { Component, OnInit } from '@angular/core';
 import { SightsService } from 'src/app/services/sights.sevice';
 
@@ -18,6 +32,7 @@ export class HomeComponent  implements OnInit {
   /*
   noOfClicks = 0;
   angularConcepts = ['Components', 'Routing', 'Services', 'Guards', 'Interceptors'];
+
+}
+}
 */
-}
-}
