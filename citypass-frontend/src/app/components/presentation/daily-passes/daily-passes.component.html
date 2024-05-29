@@ -1,4 +1,4 @@
-<h1>Znamenitosti</h1>
+<h1>Daily pass</h1>
 
 <table class="table table-striped">
     <thead>
@@ -9,11 +9,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let z of znamenitosti">
+        <tr *ngFor="let z of daily_passes">
             <td>{{z.id}}</td>
-            <td>{{z.ime}}</td>
-            <td>{{z.opis}}</td>
+            <td>{{z.cijena}}</td>
         </tr>
     </tbody>
 </table>
-
