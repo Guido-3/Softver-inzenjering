@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d557d68c-5cf8-42ce-822e-863dbb997987" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/common/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/common/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/common/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/common/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/common/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/common/header/header.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/presentation/contact/contact.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/presentation/contact/contact.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/presentation/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/presentation/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../citypass-frontend/src/app/components/presentation/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../citypass-frontend/src/app/components/presentation/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bazaZaIzvoz/baza.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +16,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2h9AcYQKqlrlll20VrEk3W5K4M5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,14 +26,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CitypassApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "my-feature-branch",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/user/Desktop/softver/bazaZaIzvoz",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="CitypassApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.citypass.CitypassApplication" />
+      <module name="citypass" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.citypass.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -59,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716996002264</updated>
       <workItem from="1716996002975" duration="160000" />
+      <workItem from="1717081065625" duration="1049000" />
     </task>
     <servers />
   </component>
