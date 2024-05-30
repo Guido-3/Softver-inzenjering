@@ -4,11 +4,14 @@ import com.citypass.models.DailyPass;
 import com.citypass.response.DBOperationResponse;
 import com.citypass.services.DailyPassService;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/citypass-api/daily-pass")
+@CrossOrigin(origins = "http://localhost:4200")
 public class DailyPassController {
 
     private final DailyPassService dailyPassService;

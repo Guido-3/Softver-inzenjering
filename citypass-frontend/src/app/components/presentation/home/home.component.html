@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centrirani Div</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         .bg-circle {
             width: 100px; /* širina kruga */
             height: 100px; /* visina kruga */
@@ -20,10 +20,11 @@
             border-radius: 10px;
             height: 400px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
-    <div class="container mt-5 ">
+
+     <!-- <div class="container mt-5 ">
         <div>
             <div class="container text-white py-5">
                 <div class="text-dark text-center mb-4">
@@ -78,8 +79,22 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </div>  -->
+    <div class="container mt-5">
+        <div *ngIf="znamenitosti && znamenitosti.length!=0">
+          <ul>
+            <li *ngFor="let znamenitost of znamenitosti">
+              {{ znamenitost.ime }} - {{ znamenitost.opis }}
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="!znamenitosti || znamenitosti.length==0">
+          <p>Nema znamenitosti za prikaz.</p>
+        </div>
+      </div>
+      
+
+</body> 
 </html>
 
 

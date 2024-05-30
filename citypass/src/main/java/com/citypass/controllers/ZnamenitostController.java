@@ -4,11 +4,15 @@ import com.citypass.models.Znamenitost;
 import com.citypass.response.DBOperationResponse;
 import com.citypass.services.ZnamenitostService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/citypass-api/znamenitost")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ZnamenitostController {
 
     private final ZnamenitostService znamenitostService;
