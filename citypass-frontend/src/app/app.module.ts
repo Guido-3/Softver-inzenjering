@@ -7,18 +7,23 @@ import { HomeComponent } from './components/presentation/home/home.component';
 import { ContactComponent } from './components/presentation/contact/contact.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
+
 import { DailyPassesComponent } from './components/presentation/daily-passes/daily-passes.component';
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 
 import { HttpClientModule } from '@angular/common/http';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactComponent,
     HeaderComponent,
+
     FooterComponent,
     DailyPassesComponent,
     BuyComponent,
@@ -29,6 +34,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+
+    FooterComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
