@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="bazaZaIzvoz">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/baza.zip!/" />
+      <root url="jar://$PROJECT_DIR$/baza_sa_create_schema_i_jos_necim.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

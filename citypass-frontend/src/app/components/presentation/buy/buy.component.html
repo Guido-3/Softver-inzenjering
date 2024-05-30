@@ -1,0 +1,42 @@
+<!-- <p>buy works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="buy.component.scss" rel="stylesheet"> <!-- Link to your compiled CSS -->
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Enter your lastname">
+            </div>
+            <div class="form-group">
+                <label for="countryname">Country Name</label>
+                <input type="text" class="form-control" id="countryname" placeholder="Enter your country name">
+            </div>
+            <div class="form-group">
+                <label for="date-from">Date From</label>
+                <input type="date" class="form-control" id="date-from">
+            </div>
+            <div class="form-group">
+                <label for="date-to">Date To</label>
+                <input type="date" class="form-control" id="date-to">
+            </div>
+            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5 text-center">SUBMIT</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
