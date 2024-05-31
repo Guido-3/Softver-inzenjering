@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SightsService } from 'src/app/services/sights.service';
+import { SightsService } from 'src/app/services/sights.sevice';
 
 @Component({
   selector: 'app-sights',
@@ -9,7 +9,7 @@ import { SightsService } from 'src/app/services/sights.service';
 export class SightsComponent implements OnInit{
   znamenitosti: any = []
 
-  constructor(private sightsService: SightsService) { }
+  constructor(private sightsService: SightsService ) { }
 
 
   ngOnInit(): void {
