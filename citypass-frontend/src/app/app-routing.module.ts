@@ -5,15 +5,15 @@ import { ContactComponent } from './components/presentation/contact/contact.comp
 import { DailyPassesComponent } from './components/presentation/daily-passes/daily-passes.component';
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
+// import { RegisterComponent } from './components/auth/register/register.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: ContactComponent },
   { path: "daily-passes", component: DailyPassesComponent},
   { path: "buy", component: BuyComponent},
-  { path: "login", component: LoginComponent},
-  { path: "register", component: RegisterComponent},
+  { path: "admin", component: LoginComponent},
+  // { path: "register", component: RegisterComponent},
 ];
 
 @NgModule({
