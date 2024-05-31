@@ -1,31 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 
 @Component({
   selector: 'app-daily-passes',
   templateUrl: './daily-passes.component.html',
   styleUrls: ['./daily-passes.component.scss']
 })
-export class DailyPassesComponent {
 
-}
-/**
- * import { Component } from '@angular/core';
-import { DailyService } from 'src/app/services/daily.service';
-
-@Component({
-  selector: 'app-daily-passes',
-  templateUrl: './daily-passes.component.html',
-  styleUrls: ['./daily-passes.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class DailyPassesComponent {
-  daily_passes: any = []
+export class DailyPassesComponent implements OnInit {
+  znamenitosti: Znamenitost[] = [];
 
-  constructor(private dailyService: DailyService ) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.daily_passes = this.dailyService.getDailyPass().subscribe(data => {
-      this.daily_passes = data; 
-    })
+    this.fetchAttractions();
+  }
+
+  fetchAttractions(){
+    return this.http.get<Znamenitost[]>('http://localhost:8080/citypass-api/znamenitost').subscribe(
+      data => {
+        this.znamenitosti = data;
+        console.log('Data fetched:', this.znamenitosti);
+      },
+      error => {
+        console.error('Error fetching data:', error);
+      }
+    );
+  }
 }
+
+interface Znamenitost {
+  id: number;
+  ime: string;
+  opis: string;
+  slika: string;
+  admin: string;
 }
- */
