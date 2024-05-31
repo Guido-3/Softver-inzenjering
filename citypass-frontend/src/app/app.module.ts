@@ -13,6 +13,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SightsComponent } from './components/admin/sights/sights.component';
+import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     DailyPassesComponent,
     BuyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SightsComponent,
+    CreateSightComponent
   ],
   imports: [
     BrowserModule,

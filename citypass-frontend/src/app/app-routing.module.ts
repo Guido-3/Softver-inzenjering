@@ -6,11 +6,14 @@ import { DailyPassesComponent } from './components/presentation/daily-passes/dai
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { SightsComponent } from './components/admin/sights/sights.component';
+import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: ContactComponent },
-  { path: "daily-passes", component: DailyPassesComponent},
+  { path: "admin/sights", component: SightsComponent},
+  { path: "admin/sights/create", component: CreateSightComponent},
   { path: "buy", component: BuyComponent},
   { path: "login", component: LoginComponent},
   { path: "register", component: RegisterComponent},
