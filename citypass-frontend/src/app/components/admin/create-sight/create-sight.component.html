@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5 mx-5">
+        <h2>Kreirajte znamenitost</h2>
+        
+        <form>
+            <div class="form-group">
+                <label for="name">Ime</label>
+                <input type="text" class="form-control" id="name" placeholder="Ime znamenitosti">
+            </div>
+            <div class="form-group">
+                <label for="countryname">Opis</label>
+                <input type="text" class="form-control" id="countryname" placeholder="Unesite opis">
+            </div>
+            <div class="form-group">
+                <label for="image">Unesite sliku</label>
+                <input className="form-control" type="file" name="image"/>
+            </div>
+            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5 text-center">SUBMIT</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

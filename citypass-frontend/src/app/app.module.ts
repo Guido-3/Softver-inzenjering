@@ -11,6 +11,8 @@ import { DailyPassesComponent } from './components/presentation/daily-passes/dai
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
+import { SightsComponent } from './components/admin/sights/sights.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RegisterComponent } from './components/auth/register/register.component
     DailyPassesComponent,
     BuyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateSightComponent,
+    SightsComponent
   ],
   imports: [
     BrowserModule,
