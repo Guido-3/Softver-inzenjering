@@ -12,8 +12,8 @@ import { CreateSightComponent } from './components/admin/create-sight/create-sig
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: ContactComponent },
-  { path: "sights", component: SightsComponent},
-  { path: "sights/create", component: CreateSightComponent},
+  { path: "admin/sights", component: SightsComponent},
+  { path: "admin/sights/create", component: CreateSightComponent},
   { path: "buy", component: BuyComponent},
   { path: "admin", component: LoginComponent},
   // { path: "register", component: RegisterComponent},

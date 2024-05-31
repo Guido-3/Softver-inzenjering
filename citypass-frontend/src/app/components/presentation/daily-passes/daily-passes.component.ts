@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SightsService } from 'src/app/services/sights.service';
 
 @Component({
   selector: 'app-daily-passes',
