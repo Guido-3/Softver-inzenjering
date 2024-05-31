@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: "admin/sights", component: SightsComponent},
   { path: "admin/sights/create", component: CreateSightComponent},
   { path: "buy", component: BuyComponent},
-  { path: "login", component: LoginComponent},
-  { path: "register", component: RegisterComponent},
+  { path: "admin", component: LoginComponent},
+  // { path: "register", component: RegisterComponent},
 ];
 
 @NgModule({
