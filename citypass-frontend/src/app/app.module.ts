@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HttpClientModule } from '@angular/common/http';
 import { SightsComponent } from './components/admin/sights/sights.component';
 import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
+import { ReservationsComponent } from './components/admin/reservations/reservations.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { CreateSightComponent } from './components/admin/create-sight/create-sig
     LoginComponent,
     RegisterComponent,
     SightsComponent,
-    CreateSightComponent
+    CreateSightComponent,
+    ReservationsComponent,
   ],
   imports: [
     BrowserModule,

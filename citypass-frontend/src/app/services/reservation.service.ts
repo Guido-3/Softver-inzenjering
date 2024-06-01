@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SightsService {
+export class ReservationService {
 
-  private baseUrl = 'http://localhost:8080/citypass-api/znamenitost'; // URL vašeg backenda
+  private baseUrl = 'http://localhost:8080/citypass-api/turista_daily_pass'; // URL vašeg backenda
 
   constructor(private http: HttpClient) { }
 
