@@ -30,6 +30,11 @@ public class DailyPassController {
         return dailyPassService.getDailyPassById(dailyPassId);
     }
 
+    @GetMapping("price-per-day/{id}")
+    public Double getCijenaDailyPassById(@PathVariable("id") int dailyPassId) {
+        return dailyPassService.getCijenaDailyPassById(dailyPassId);
+    }
+
     @PostMapping
     public DBOperationResponse addDailyPass(@RequestBody DailyPass dailyPass) {
         return dailyPassService.addDailyPass(dailyPass);

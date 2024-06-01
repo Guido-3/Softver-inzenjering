@@ -1,42 +1,112 @@
-<!-- <p>buy works!</p> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Form</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="buy.component.scss" rel="stylesheet"> <!-- Link to your compiled CSS -->
-</head>
-<body>
-    <div class="container">
-        <form>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" class="form-control" id="lastname" placeholder="Enter your lastname">
-            </div>
-            <div class="form-group">
-                <label for="countryname">Country Name</label>
-                <input type="text" class="form-control" id="countryname" placeholder="Enter your country name">
-            </div>
-            <div class="form-group">
-                <label for="date-from">Date From</label>
-                <input type="date" class="form-control" id="date-from">
-            </div>
-            <div class="form-group">
-                <label for="date-to">Date To</label>
-                <input type="date" class="form-control" id="date-to">
-            </div>
-            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5 text-center">SUBMIT</button>
-        </form>
+<div class="container">
+    <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
+      <div *ngIf="buyForm.invalid && buyForm.touched" class="alert alert-danger">
+        All fields must be filled out correctly before submitting the form.
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter your name">
+        <div *ngIf="buyForm.get('name')?.invalid && buyForm.get('name')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastname" placeholder="Enter your lastname">
+        <div *ngIf="buyForm.get('lastname')?.invalid && buyForm.get('lastname')?.touched" class="text-danger">
+          Last name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+        <div *ngIf="buyForm.get('email')?.invalid && buyForm.get('email')?.touched" class="text-danger">
+          Valid email is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="countryname">Country Name</label>
+        <select class="form-control" id="countryname" formControlName="countryname">
+          <option value="" disabled selected>Select your country</option>
+          <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
+        <div *ngIf="buyForm.get('countryname')?.invalid && buyForm.get('countryname')?.touched" class="text-danger">
+          Country name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date-from">Date From</label>
+        <input type="date" class="form-control" id="date-from" formControlName="dateFrom">
+        <div *ngIf="buyForm.get('dateFrom')?.invalid && buyForm.get('dateFrom')?.touched" class="text-danger">
+          Date From is required and must be a future date.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date-to">Date To</label>
+        <input type="date" class="form-control" id="date-to" formControlName="dateTo">
+        <div *ngIf="buyForm.get('dateTo')?.invalid && buyForm.get('dateTo')?.touched" class="text-danger">
+          Date To is required and must be a future date.
+        </div>
+        <div *ngIf="buyForm.errors?.['dateRangeInvalid'] && buyForm.get('dateTo')?.touched && buyForm.get('dateFrom')?.touched" class="text-danger">
+          Date To must be on or after Date From.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5 text-center" [disabled]="buyForm.invalid">SUBMIT</button>
+    </form>
+  
+    <div *ngIf="totalCost !== null" class="mt-3">
+      <h2>Ukupna cena putovanja: {{ totalCost | currency:'EUR' }}</h2>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+  
+    <div *ngIf="showPaymentForm" class="mt-5">
+      <h3>Payment Information</h3>
+      <form [formGroup]="paymentForm" (ngSubmit)="onPaymentSubmit()">
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <input type="password" class="form-control" id="card-number" formControlName="cardNumber" placeholder="Enter card number" maxlength="16">
+          <div *ngIf="paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched" class="text-danger">
+            Card number is required and must be 16 digits.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" class="form-control" id="card-name" formControlName="cardName" placeholder="Enter cardholder name">
+          <div *ngIf="paymentForm.get('cardName')?.invalid && paymentForm.get('cardName')?.touched" class="text-danger">
+            Cardholder name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="expiry-date">Expiry Date (MM/YY)</label>
+          <input type="text" class="form-control" id="expiry-date" formControlName="expiryDate" placeholder="MM/YY">
+          <div *ngIf="paymentForm.get('expiryDate')?.invalid && paymentForm.get('expiryDate')?.touched" class="text-danger">
+            Expiry date is required and must be in the format MM/YY.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" class="form-control" id="cvv" formControlName="cvv" placeholder="Enter CVV" maxlength="3">
+          <div *ngIf="paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched" class="text-danger">
+            CVV is required and must be 3 digits.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-xl rounded-pill mt-5 text-center" [disabled]="paymentForm.invalid">EXECUTE PAYMENT</button>
+      </form>
+  
+      <div *ngIf="paymentSuccess" class="mt-3 alert alert-success">
+        Payment successful!
+      </div>
+    </div>
+  
+    <div *ngIf="showPassCard" class="mt-5">
+      <div id="passCard" class="card p-3 pass-card">
+        <img src="assets/images/logo1.png" alt="Logo" class="logo">
+        <h3>Daily Pass</h3>
+        <p><strong>Name:</strong> {{ buyForm.get('name')?.value }}</p>
+        <p><strong>Last Name:</strong> {{ buyForm.get('lastname')?.value }}</p>
+        <p><strong>Date From:</strong> {{ buyForm.get('dateFrom')?.value }}</p>
+        <p><strong>Date To:</strong> {{ buyForm.get('dateTo')?.value }}</p>
+      </div>
+      <button class="btn btn-primary mt-3" ngxPrint printSectionId="passCard">Download Pass</button>
+    </div>
+  </div>
+  

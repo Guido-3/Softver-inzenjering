@@ -24,6 +24,12 @@ public class DailyPassService {
         return dailyPassRepository.getDailyPassById(dailyPassId);
     }
 
+    public Double getCijenaDailyPassById(int dailyPassId) {
+        return dailyPassRepository.getCijenaDailyPassById(dailyPassId);
+    }
+
+
+
     public DBOperationResponse addDailyPass(DailyPass dailyPass) {
         return dailyPassRepository.addDailyPass(dailyPass);
     }

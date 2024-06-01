@@ -11,6 +11,8 @@ import { DailyPassesComponent } from './components/presentation/daily-passes/dai
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPrintModule } from 'ngx-print';
 
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
@@ -28,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule, 
+    ReactiveFormsModule,
+    NgxPrintModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

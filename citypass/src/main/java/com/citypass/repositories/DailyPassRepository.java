@@ -87,6 +87,38 @@ public class DailyPassRepository {
         return result;
     }
 
+    public Double getCijenaDailyPassById(int dailyPassId) {
+        Connection con = null;
+        Double result = null;
+
+        try {
+            con = DButil.open();
+            String sql = "SELECT cijena FROM daily_pass WHERE id=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, dailyPassId);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getDouble("cijena");
+            }
+
+            ps.close();
+        } catch (Exception ex) {
+            result = null;
+            System.out.println(ex);
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+            }
+        }
+
+        return result;
+    }
+
     public DBOperationResponse addDailyPass(DailyPass dailyPass) {
         Connection con = null;
         DBOperationResponse result = null;
