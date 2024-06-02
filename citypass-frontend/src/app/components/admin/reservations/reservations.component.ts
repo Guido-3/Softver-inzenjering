@@ -6,23 +6,20 @@ import { ReservationService } from 'src/app/services/reservation.service';
   templateUrl: './reservations.component.html',
   styleUrls: ['./reservations.component.scss']
 })
-
-export class ReservationsComponent implements OnInit{
+export class ReservationsComponent implements OnInit {
   reservations: any = []
 
-  constructor(private sightsService: ReservationService) { }
-
+  constructor(private reservationService: ReservationService) {}
 
   ngOnInit(): void {
-    console.log('ngOnInit called');
-    this.sightsService.getSights().subscribe(
-      data => {
-        console.log('Data received:', data);
-        this.reservations = data;
-      },
-      error => {
-        console.error('Error fetching sights data', error);
-      }
-    );
+
+    this.reservationService.getReservations().subscribe( data => {
+      this.reservations = data;
+       
+    }, error => {
+      console.error('Error fetching reservations', error);
+    });
   }
+
+
 }
