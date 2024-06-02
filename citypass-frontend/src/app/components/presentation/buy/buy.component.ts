@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss']
 })
-export class BuyComponent {
+export class BuyComponent implements OnInit {
   buyForm: FormGroup;
   paymentForm: FormGroup;
   totalCost: number | null = null;
@@ -35,7 +36,7 @@ export class BuyComponent {
     "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
     "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
     "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu",
-    "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+    "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe", "Crna Gora"
   ];
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
@@ -57,7 +58,14 @@ export class BuyComponent {
 
     this.getDailyRate();
   }
+  ngOnInit(): void {}
 
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Dodajemo 1 jer je mesec 0-indeksiran
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
   getDailyRate() {
     this.http.get<number>('http://localhost:8080/citypass-api/daily-pass/price-per-day/1').subscribe(rate => {
       this.dailyRate = rate;
@@ -90,20 +98,87 @@ export class BuyComponent {
         const startDate = new Date(dateFrom);
         const endDate = new Date(dateTo);
         const timeDifference = endDate.getTime() - startDate.getTime();
-        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24)) + 1; // Including both dates
+        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24)) + 1; 
         this.totalCost = daysDifference * this.dailyRate;
-        this.showPaymentForm = true; // Prikaži formu za plaćanje
+        this.showPaymentForm = true; 
       }
     } else {
-      this.buyForm.markAllAsTouched(); // Obeležava sva polja kao touched da bi prikazao poruke o greškama
+      this.buyForm.markAllAsTouched(); 
     }
   }
-
   onPaymentSubmit() {
     if (this.paymentForm.valid) {
-      // Prikazujemo poruku o uspešnom plaćanju
       this.paymentSuccess = true;
-      this.showPassCard = true; // Prikaži karticu sa informacijama korisnika
+      this.showPassCard = true;
+
+      const korisnikData = {
+        ime: this.buyForm.get('name')?.value,
+        prezime: this.buyForm.get('lastname')?.value,
+        email: this.buyForm.get('email')?.value,
+        drzava_ime: this.buyForm.get('countryname')?.value,
+        br_telefona: '123',
+        admin: 'Gvido'
+      };
+
+      const turistaData = {
+        ime: this.buyForm.get('name')?.value,
+        prezime: this.buyForm.get('lastname')?.value,
+        drzava_ime: this.buyForm.get('countryname')?.value
+      };
+
+      const dailyPassId = 1; // ID daily pass-a
+
+      const turistaDailyPassData = {
+        turistaId: null, // Biće postavljeno nakon kreiranja turista
+        dailyPassId: dailyPassId,
+        datumOd: this.buyForm.get('dateFrom')?.value,
+        datumDo: this.buyForm.get('dateTo')?.value,
+        ukupnaCijena: this.totalCost,
+        kupovinaId: null 
+      };
+
+      // Prvo kreiramo korisnika
+      this.http.post('http://localhost:8080/citypass-api/korisnik', korisnikData).subscribe((response: any) => {
+        console.log('Korisnik saved successfully', response);
+        const korisnikId = response.id;
+
+        console.log("Novi korisnik: ", korisnikData);
+        // Kreiramo kupovinu sa dobijenim korisnikId
+        const kupovinaData = {
+          korisnik_id: korisnikId,
+          datum: this.formatDate(new Date()),
+          // id: null
+        };
+        console.log("Nova kupovina: ", kupovinaData);
+
+        this.http.post('http://localhost:8080/citypass-api/kupovina', kupovinaData).subscribe((kupovinaresponse: any) => {
+          console.log('Kupovina saved successfully', kupovinaresponse);
+          //const kupovinaId = kupovinaresponse.id;
+          turistaDailyPassData.kupovinaId = kupovinaresponse.id;
+        }, error => {
+          console.error('Error saving kupovina', error);
+        });
+
+        // Zatim kreiramo turista i vežemo ga za daily pass
+        this.http.post('http://localhost:8080/citypass-api/turista', turistaData).subscribe((turista: any) => {
+          console.log('Turista saved successfully', turista);
+          // Nakon što je turista kreiran, koristimo njegov ID za kreiranje turistaDailyPass
+          turistaDailyPassData.turistaId = turista.id;
+
+          this.http.post('http://localhost:8080/citypass-api/turista-daily-pass', turistaDailyPassData).subscribe(response => {
+            console.log('TuristaDailyPass saved successfully', response);
+          }, error => {
+            console.error('Error saving turistaDailyPass', error);
+          });
+
+        }, error => {
+          console.error('Error saving turista', error);
+        });
+
+      }, error => {
+        console.error('Error saving korisnik', error);
+      });
+
     } else {
       this.paymentForm.markAllAsTouched();
     }
