@@ -1,0 +1,333 @@
+
+
+.section__howitworks {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: #f1f2f4;
+    display: block;
+    padding-bottom: 90px;
+    padding-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.section__howitworks header h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.howitworks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px; /* Dodato za veći razmak između elemenata */
+}
+
+.howitworks-list-item {
+    margin-bottom: 50px;
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+.howitworks-list-meta {
+    margin-bottom: 15px;
+}
+
+.btn--secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn--round {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.howitworks-list-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.howitworks-list-description {
+    width: 70%; /* Dodato da zauzima duplo manje prostora u odnosu na roditelja */
+    margin: 0 auto;
+    margin-top: 2.5%; /* Centrirano unutar roditelja */
+}
+
+.howitworks-list-description p {
+    font-size: 1em;
+}
+
+.description-text {
+    font-style: bold;
+    font-family: 'Georgia', serif;
+    line-height: 1.2; /* Smanjeno za kompaktniji izgled */
+    margin: 5px 0; /* Smanjeno za manji razmak */
+}
+
+.advantage-icon i {
+    font-size: 3em;
+}
+.description-text a {
+    /* Stilovi za link unutar paragrafa */
+    color: #01060b;
+    font-style: bold; /* Boja teksta */
+    /* Dodatni stilovi... */
+}
+
+.description-text a:hover {
+    /* Stilovi za link unutar paragrafa prilikom hovera */
+    text-decoration: underline;
+     /* Dodaj podcrtavanje pri hoveru */
+    /* Dodatni stilovi... */
+}
+.section__howitworks {
+    padding: 20px 0;
+}
+.howitworks-list {
+    list-style: none;
+    padding: 0;
+}
+.howitworks-list-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.howitworks-list-meta {
+    margin-bottom: 15px;
+}
+.btn--secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+.btn--round {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+.advantage-icon i {
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.kocka{
+    background-color:#ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.row > p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+body {
+    font-family:Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    background-color: linear-gradient(0deg, #ee0979 0%, #000080 100%) !important;
+    margin: 0;
+    padding: 0;
+    border-radius: 50;
+}
+
+.container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.kocka .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-item {
+    background: linear-gradient(0deg, #ee0979 0%, #000080 100%);
+    border-radius: 50%; /* Postavljanje radijusa na 50% */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    width: 210px;
+    height: 210px; /* Postavljanje visine na istu vrijednost kao i širina */
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon-container {
+    background-color:linear-gradient(0deg, #ee0979 0%, #000080 100%); /* Žuta pozadina */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.icon-container p{
+    font-family: 'Sans';
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    color: white;
+    font-style: strong;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: white;
+    font-style: strong;
+}
+
+.feature-item a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.feature-item a:hover {
+    color: #007BFF;
+}
+.full-width-card {
+    width: 100%;
+    transition: transform 0.3s ease; /* Dodajemo tranziciju za efekat hovera */
+}
+
+.full-width-card:hover {
+    transform: scale(1.05); /* Povećavamo veličinu kartice prilikom hovera */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 300px; /* Fiksna visina slike */
+    object-fit: cover; /* Održava omjer slike unutar zadanih dimenzija */
+}
+
+.card-body {
+    width: 100%;
+    text-align: justify;
+}
+
+.card-body h5 {
+    text-align: center; /* Centriranje naslova */
+}
+.kocka .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.col-md-4 {
+    flex: 0 0 calc(33.33% - 20px); /* Tri kolone u redu sa razmakom od 20px */
+    max-width: calc(33.33% - 20px); /* Maksimalna širina kolone */
+    margin-bottom: 20px; /* Razmak između redova */
+}
+
+.feature-item {
+    background: linear-gradient(0deg, #ee0979 0%, #000080 100%);
+    border-radius: 50%; /* Postavljanje radijusa na 50% */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    height: 210px; /* Postavljanje visine */
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon-container {
+    background-color:linear-gradient(0deg, #ee0979 0%, #000080 100%);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    color: white;
+    font-style: strong;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: white;
+    font-style: strong;
+}
+
+.feature-item a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.feature-item a:hover {
+    color: #007BFF;
+}
+
+.attractions-header {
+    /* CSS stilovi za ovaj jedinstveni <p> element */
+    /* Na primjer: */
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 100px;
+}

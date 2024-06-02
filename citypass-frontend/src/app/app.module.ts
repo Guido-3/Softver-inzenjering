@@ -12,6 +12,7 @@ import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 
+
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
