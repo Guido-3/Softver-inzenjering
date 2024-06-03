@@ -8,14 +8,14 @@ import { ReservationService } from 'src/app/services/reservation.service';
 })
 
 export class ReservationsComponent implements OnInit{
-  reservations: any = []
+  reservations: any[] = []
 
-  constructor(private sightsService: ReservationService) { }
+  constructor(private reservationService: ReservationService) { }
 
 
   ngOnInit(): void {
     console.log('ngOnInit called');
-    this.sightsService.getSights().subscribe(
+    this.reservationService.getReservations().subscribe(
       data => {
         console.log('Data received:', data);
         this.reservations = data;

@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class ReservationService {
 
-  private baseUrl = 'http://localhost:8080/citypass-api/turista_daily_pass'; // URL vašeg backenda
+  private baseUrl = 'http://localhost:8080/citypass-api/turista-daily-pass'; // URL vašeg backenda
 
   constructor(private http: HttpClient) { }
 
-  getSights(): Observable<any[]> {
+  getReservations(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }
 }

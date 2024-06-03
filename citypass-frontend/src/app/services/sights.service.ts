@@ -14,4 +14,5 @@ export class SightsService {
   getSights(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }
+  
 }
