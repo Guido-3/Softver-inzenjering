@@ -154,7 +154,8 @@ export class BuyComponent implements OnInit {
         this.http.post('http://localhost:8080/citypass-api/kupovina', kupovinaData).subscribe((kupovinaresponse: any) => {
           console.log('Kupovina saved successfully', kupovinaresponse);
           //const kupovinaId = kupovinaresponse.id;
-          turistaDailyPassData.kupovinaId = kupovinaresponse.id;
+          const kupovinaId = kupovinaresponse.id;
+          turistaDailyPassData.kupovinaId = kupovinaId;
         }, error => {
           console.error('Error saving kupovina', error);
         });
@@ -164,6 +165,7 @@ export class BuyComponent implements OnInit {
           console.log('Turista saved successfully', turista);
           // Nakon što je turista kreiran, koristimo njegov ID za kreiranje turistaDailyPass
           turistaDailyPassData.turistaId = turista.id;
+          
 
           this.http.post('http://localhost:8080/citypass-api/turista-daily-pass', turistaDailyPassData).subscribe(response => {
             console.log('TuristaDailyPass saved successfully', response);
