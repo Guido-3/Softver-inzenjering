@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Znamenitosti</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-4">
+
+    <div class="row mb-3">
+        <div class="col d-flex justify-content-center w-100">
+            <a class="btn btn-primary btn-xl rounded-pill mt-5 text-center" style="background-color: #ee0979; border-color: #ee0979; font-size: 1rem; font-weight: bold; padding: 25px;  margin-bottom: 50px;" href="/admin/sights/create" role="button">DODAJ ZNAMENITOST</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Slika</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let znamenitost of znamenitosti">
+                <td>{{znamenitost.id}}</td>
+                <td>{{znamenitost.ime}}</td>
+                <td>{{znamenitost.opis}}</td>
+                <td><img class="card-img-top" [src]="znamenitost.slika" alt="Card image cap"></td>
+                <td style="width: 10px">
+                    <a [routerLink]="['/admin/sights/edit', znamenitost.id]" class="btn btn-primary btn-sm me-1 mb-2" 
+                       style="background-color: rgba(2,68,157,255); border-color: rgba(2,68,157,255); border-radius: 12px; font-weight: bold;">
+                        Uredi
+                    </a>
+                    <button type="button" class="btn btn-danger btn-sm" 
+                            (click)="deleteZnamenitost(znamenitost.id)" 
+                            style="border-radius: 12px; font-weight: bold;">
+                        Izbriši
+                    </button>
+                </td>
+                
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS and dependencies (optional, for additional functionality) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

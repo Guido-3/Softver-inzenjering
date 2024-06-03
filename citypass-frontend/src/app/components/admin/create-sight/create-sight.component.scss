@@ -1,0 +1,55 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$text-color: #343a40;
+
+body {
+  background: linear-gradient(0deg, #ee0979 0%, #02449d 100%);
+  color: $text-color;
+}
+
+.container {
+  max-width: 600px;
+  padding: 40px;
+}
+
+form {
+  background: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      font-weight: bold;
+      font-family: "Catamaran", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    input {
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+  }
+
+  .btn-primary {
+    background-color: #ee0979;
+    border-color: #ee0979;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px 25px;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #be0761;
+      border-color: #be0761;
+    }
+  }
+}
+
+.alert {
+  margin-top: 20px;
+}
