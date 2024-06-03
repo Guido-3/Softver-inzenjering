@@ -6,49 +6,99 @@
     <title>Daily Pass</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container py-5">
         <!-- Naslov -->
-        <div class="row mb-5">
-            <div class="col text-center">
-                <h1>Daily Pass</h1>
+        <div class="kocka">
+            <div class="row mb-5">
+                <div class="col text-center">
+                    <h2>THAT'S INCLUDED IN THE KOTOR CITYPASS</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-5 d-flex justify-content-center" *ngFor="let icon of icons">
+                    <div class="feature-item">
+                        <div class="icon-container">
+                            <i class="fas fa-4x" [ngClass]="icon.class"></i>
+                        </div>
+                        <p><strong>{{ icon.text }}</strong></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Kartice -->
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="buy" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+    
+
+    <div class="section__howitworks">
+        <div id="c59" class="frame frame-default frame-type-howitworks frame-layout-0">
+            <header>
+                <h2 class="ce-headline-center">HOW IT WORKS</h2>
+            </header>
+            <div class="howitworks">
+                <ol class="howitworks-list">
+                    <li class="howitworks-list-item animate">
+                        <div class="howitworks-list-meta">
+                            <span class="btn btn--secondary btn--lg btn--round">1</span>
+                        </div>
+                        <div class="howitworks-list-image">
+                            <i class="fas fa-ticket fa-3x"></i>
+                        </div>
+                        <div class="howitworks-list-header">ORDER KOTOR PASS</div>
+                        <div class="howitworks-list-description">
+                            <p class="description-text"><a href="/buy"><strong>Order Kotor PASS now</strong></a> and either pick it up in Kotor, or save it as a mobile Kotor PASS on your smartphone.</p>
+                        </div>
+                    </li>
+                    <li class="howitworks-list-item animate">
+                        <div class="howitworks-list-meta">
+                            <span class="btn btn--secondary btn--lg btn--round">2</span>
+                        </div>
+                        <div class="howitworks-list-image">
+                            <i class="fas fa-landmark fa-3x"></i>
+                        </div>
+                        <div class="howitworks-list-header">DISCOVER MANY ATTRACTIONS</div>
+                        <div class="howitworks-list-description">
+                            <p class="description-text">Simply show your Kotor PASS at the top attractions and visit them for free.</p>
+                        </div>
+                    </li>
+                    <li class="howitworks-list-item animate">
+                        <div class="howitworks-list-meta">
+                            <span class="btn btn--secondary btn--lg btn--round">3</span>
+                        </div>
+                        <div class="howitworks-list-image">
+                            <i class="far fa-heart fa-3x"></i>
+                        </div>
+                        <div class="howitworks-list-header">EXPERIENCE KOTOR</div>
+                        <div class="howitworks-list-description">
+                            <p class="description-text">Explore Kotor with the available transportation options.</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="buy" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="buy" class="btn btn-primary">Go somewhere</a>
-                    </div>
+        </div>
+    </div>
+
+    <!--ZNAMENITOSTI-->
+  
+
+    <div class="row">
+        <p class="attractions-header">WHICH ATTRACTIONS ARE INCLUDED?</p>
+        <div class="col-md-6 mb-5" *ngFor="let znamenitost of znamenitosti">
+            <div class="card full-width-card">
+                <img class="card-img-top" [src]="znamenitost.slika" alt="Card image cap">
+                <div class="card-body text-justify">
+                    <h5 class="card-title"> <strong>{{ znamenitost.ime }}</strong></h5>
+                    <p class="card-text">{{ znamenitost.opis }}</p>
+                    <!-- Dodajte ikone ili bilo kakve druge dodatne informacije ako je potrebno -->
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
