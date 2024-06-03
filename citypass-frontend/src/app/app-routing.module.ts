@@ -9,12 +9,14 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { SightsComponent } from './components/admin/sights/sights.component';
 import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
 import { ReservationsComponent } from './components/admin/reservations/reservations.component';
+import { EditSightComponent } from './components/admin/edit-sight/edit-sight.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: ContactComponent },
   { path: "admin/sights", component: SightsComponent},
   { path: "admin/sights/create", component: CreateSightComponent},
+  { path: "admin/sights/edit", component: EditSightComponent},
   { path: "admin/reservations", component: ReservationsComponent},
   { path: "buy", component: BuyComponent},
   { path: "admin", component: LoginComponent},
