@@ -11,10 +11,16 @@ import { DailyPassesComponent } from './components/presentation/daily-passes/dai
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SightsComponent } from './components/admin/sights/sights.component';
+import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
+import { ReservationsComponent } from './components/admin/reservations/reservations.component';
+import { EditSightComponent } from './components/admin/edit-sight/edit-sight.component';
+import { CommonModule } from '@angular/common';
+import { SightsService } from './services/sights.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,16 +31,22 @@ import { HttpClientModule } from '@angular/common/http';
     DailyPassesComponent,
     BuyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent, 
+    SightsComponent,
+    CreateSightComponent,
+    ReservationsComponent,
+    EditSightComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    NgxPrintModule 
+    NgxPrintModule,
+    FormsModule,
+    CommonModule 
   ],
-  providers: [],
+  providers: [SightsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
