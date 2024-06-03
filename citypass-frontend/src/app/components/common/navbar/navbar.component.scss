@@ -1,0 +1,65 @@
+.navbar {
+    background: rgba(0, 0, 0, 0.5); /* Potpuno transparentno crna */
+    padding: 10px 20px;
+    z-index: 1000; /* Osigurava da je navbar iznad ostalog sadržaja */
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Boja teksta u navbaru */
+  }
+  
+  .nav-item .nav-link {
+    font-weight: bold;
+    margin: 10px;
+    font-size: 1.2rem;
+    color: white !important;
+  }
+  
+  .nav-item .nav-link.active,
+  .nav-item .nav-link:hover {
+    text-decoration: underline; /* Podvlači aktivni i hover link */
+    color: #ddd !important;
+  }
+  
+  .nav-item .btn-bordo {
+    background-color: 	rgba(2,68,157,255); /* Bordo boja */
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .nav-item .btn-bordo:hover {
+    background-color: #6497b1; /* Tamnija bordo boja na hover */
+    color: #fff !important;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar .navbar-brand span {
+      font-size: 1.2rem;
+    }
+  
+    .nav-item .nav-link {
+      font-size: 1rem;
+    }
+  
+    .nav-item .btn-bordo {
+      font-size: 1rem;
+    }
+  }
+  

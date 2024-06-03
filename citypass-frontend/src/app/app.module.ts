@@ -11,24 +11,33 @@ import { DailyPassesComponent } from './components/presentation/daily-passes/dai
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { Header2Component } from './components/common/header2/header2.component';
+
+
+
+
 
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './components/common/navbar/navbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    HeaderComponent,
+    Header2Component,
     FooterComponent,
     DailyPassesComponent,
     BuyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

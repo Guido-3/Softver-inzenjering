@@ -31,7 +31,9 @@
             ],
             "styles": [
               "src/styles.scss", 
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

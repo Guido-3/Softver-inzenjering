@@ -17,7 +17,7 @@ public class ZnamenitostRepository {
     // SQL UPITI
     public List<Znamenitost> getZnamenitost() {
         Connection con = null;
-        List<Znamenitost> result = null;
+        List<Znamenitost> result = new ArrayList<>();
 
         try {
             con = DButil.open();
