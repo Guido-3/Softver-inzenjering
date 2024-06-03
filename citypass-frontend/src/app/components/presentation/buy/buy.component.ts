@@ -1,7 +1,8 @@
 import { Component, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-buy',
@@ -91,6 +92,80 @@ export class BuyComponent implements OnInit {
     return null;
   }
 
+  // generatePDF(): void {
+  //   const pdf = new jsPDF('p', 'mm', 'a4');
+  //   const width = pdf.internal.pageSize.getWidth();
+  //   const height = pdf.internal.pageSize.getHeight();
+    
+  //   pdf.setFillColor('#02449d');
+  //   pdf.rect(0, 0, width, height, 'F');
+    
+  //   const logo = 'assets/images/logo1.png'; // Path to the logo
+  //   const name = this.buyForm.get('name')?.value;
+  //   const lastname = this.buyForm.get('lastname')?.value;
+  //   const dateFrom = this.buyForm.get('dateFrom')?.value;
+  //   const dateTo = this.buyForm.get('dateTo')?.value;
+
+  //   pdf.setTextColor('#FFFFFF');
+  //   pdf.setFontSize(24);
+  //   pdf.text('Daily Pass', width / 2, 30, { align: 'center' });
+
+  //   const img = new Image();
+  //   img.src = logo;
+  //   img.onload = () => {
+  //     pdf.addImage(img, 'PNG', width / 2 - 40, 40, 80, 80); // Centered logo
+
+  //     pdf.setFontSize(16);
+  //     pdf.text(`Name: ${name}`, width / 2, 140, { align: 'center' });
+  //     pdf.text(`Last Name: ${lastname}`, width / 2, 160, { align: 'center' });
+  //     pdf.text(`Date From: ${dateFrom}`, width / 2, 180, { align: 'center' });
+  //     pdf.text(`Date To: ${dateTo}`, width / 2, 200, { align: 'center' });
+
+  //     pdf.save('citypass.pdf');
+  //   };
+  // }
+
+  generatePDF(): void {
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const width = pdf.internal.pageSize.getWidth();
+    const height = pdf.internal.pageSize.getHeight();
+    
+    pdf.setFillColor('#02449d');
+    pdf.rect(0, 0, width, height, 'F');
+    
+    const logo = 'assets/images/logo1.png'; // Path to the logo
+    const qr = 'assets/images/qr1.png'; // Path to the QR code
+    const name = this.buyForm.get('name')?.value;
+    const lastname = this.buyForm.get('lastname')?.value;
+    const dateFrom = this.buyForm.get('dateFrom')?.value;
+    const dateTo = this.buyForm.get('dateTo')?.value;
+
+    pdf.setTextColor('#FFFFFF');
+    pdf.setFontSize(24);
+    pdf.setFont('Times', 'bold');
+    pdf.text('Daily Pass', width / 2, 30, { align: 'center' });
+
+    const img = new Image();
+    img.src = logo;
+    img.onload = () => {
+      pdf.addImage(img, 'PNG', width / 2 - 40, 40, 80, 80); // Centered logo
+
+      pdf.setFontSize(16);
+      pdf.text(`Name: ${name}`, width / 2, 140, { align: 'center' });
+      pdf.text(`Last Name: ${lastname}`, width / 2, 160, { align: 'center' });
+      pdf.text(`Date From: ${dateFrom}`, width / 2, 180, { align: 'center' });
+      pdf.text(`Date To: ${dateTo}`, width / 2, 200, { align: 'center' });
+
+      const qrImg = new Image();
+      qrImg.src = qr;
+      qrImg.onload = () => {
+        pdf.addImage(qrImg, 'PNG', width / 2 - 30, 220, 60, 60); // Centered QR code
+        pdf.save('citypass.pdf');
+      };
+    };
+  }
+
+
   onSubmit() {
     if (this.buyForm.valid) {
       const { dateFrom, dateTo } = this.buyForm.value;
@@ -137,52 +212,96 @@ export class BuyComponent implements OnInit {
         kupovinaId: null 
       };
 
-      // Prvo kreiramo korisnika
-      this.http.post('http://localhost:8080/citypass-api/korisnik', korisnikData).subscribe((response: any) => {
-        console.log('Korisnik saved successfully', response);
-        const korisnikId = response.id;
+    //   // Prvo kreiramo korisnika
+    //   this.http.post('http://localhost:8080/citypass-api/korisnik', korisnikData).subscribe((response: any) => {
+    //     console.log('Korisnik saved successfully', response);
+    //     const korisnikId = response.id;
 
-        console.log("Novi korisnik: ", korisnikData);
-        // Kreiramo kupovinu sa dobijenim korisnikId
-        const kupovinaData = {
-          korisnik_id: korisnikId,
-          datum: this.formatDate(new Date()),
-          // id: null
-        };
-        console.log("Nova kupovina: ", kupovinaData);
+    //     console.log("Novi korisnik: ", korisnikData);
+    //     // Kreiramo kupovinu sa dobijenim korisnikId
+    //     const kupovinaData = {
+    //       korisnik_id: korisnikId,
+    //       datum: this.formatDate(new Date()),
+    //       // id: null
+    //     };
+    //     console.log("Nova kupovina: ", kupovinaData);
 
-        this.http.post('http://localhost:8080/citypass-api/kupovina', kupovinaData).subscribe((kupovinaresponse: any) => {
-          console.log('Kupovina saved successfully', kupovinaresponse);
-          //const kupovinaId = kupovinaresponse.id;
-          const kupovinaId = kupovinaresponse.id;
-          turistaDailyPassData.kupovinaId = kupovinaId;
-        }, error => {
-          console.error('Error saving kupovina', error);
-        });
+    //     this.http.post('http://localhost:8080/citypass-api/kupovina', kupovinaData).subscribe((kupovinaresponse: any) => {
+    //       console.log('Kupovina saved successfully', kupovinaresponse);
+    //       //const kupovinaId = kupovinaresponse.id;
+    //       const kupovinaId = kupovinaresponse.id;
+    //       turistaDailyPassData.kupovinaId = kupovinaId;
+    //     }, error => {
+    //       console.error('Error saving kupovina', error);
+    //     });
 
-        // Zatim kreiramo turista i vežemo ga za daily pass
-        this.http.post('http://localhost:8080/citypass-api/turista', turistaData).subscribe((turista: any) => {
-          console.log('Turista saved successfully', turista);
-          // Nakon što je turista kreiran, koristimo njegov ID za kreiranje turistaDailyPass
-          turistaDailyPassData.turistaId = turista.id;
+    //     // Zatim kreiramo turista i vežemo ga za daily pass
+    //     this.http.post('http://localhost:8080/citypass-api/turista', turistaData).subscribe((turista: any) => {
+    //       console.log('Turista saved successfully', turista);
+    //       // Nakon što je turista kreiran, koristimo njegov ID za kreiranje turistaDailyPass
+    //       turistaDailyPassData.turistaId = turista.id;
           
 
-          this.http.post('http://localhost:8080/citypass-api/turista-daily-pass', turistaDailyPassData).subscribe(response => {
-            console.log('TuristaDailyPass saved successfully', response);
+    //       this.http.post('http://localhost:8080/citypass-api/turista-daily-pass', turistaDailyPassData).subscribe(response => {
+    //         console.log('TuristaDailyPass saved successfully', response);
+    //       }, error => {
+    //         console.error('Error saving turistaDailyPass', error);
+    //       });
+
+    //     }, error => {
+    //       console.error('Error saving turista', error);
+    //     });
+
+    //   }, error => {
+    //     console.error('Error saving korisnik', error);
+    //   });
+
+    // } else {
+    //   this.paymentForm.markAllAsTouched();
+    // }
+          // Prvo kreiramo korisnika
+          this.http.post('http://localhost:8080/citypass-api/korisnik', korisnikData).subscribe((response: any) => {
+            console.log('Korisnik saved successfully', response);
+            const korisnikId = response.id;
+    
+            console.log("Novi korisnik: ", korisnikData);
+            // Kreiramo kupovinu sa dobijenim korisnikId
+            const kupovinaData = {
+              korisnik_id: korisnikId,
+              datum: this.formatDate(new Date())
+            };
+            console.log("Nova kupovina: ", kupovinaData);
+    
+            this.http.post('http://localhost:8080/citypass-api/kupovina', kupovinaData).subscribe((kupovinaresponse: any) => {
+              console.log('Kupovina saved successfully', kupovinaresponse);
+              const kupovinaId = kupovinaresponse.id;
+              turistaDailyPassData.kupovinaId = kupovinaId;
+    
+              // Zatim kreiramo turista i vežemo ga za daily pass
+              this.http.post('http://localhost:8080/citypass-api/turista', turistaData).subscribe((turista: any) => {
+                console.log('Turista saved successfully', turista);
+                turistaDailyPassData.turistaId = turista.id;
+    
+                this.http.post('http://localhost:8080/citypass-api/turista-daily-pass', turistaDailyPassData).subscribe(response => {
+                  console.log('TuristaDailyPass saved successfully', response);
+                }, error => {
+                  console.error('Error saving turistaDailyPass', error);
+                });
+    
+              }, error => {
+                console.error('Error saving turista', error);
+              });
+    
+            }, error => {
+              console.error('Error saving kupovina', error);
+            });
+    
           }, error => {
-            console.error('Error saving turistaDailyPass', error);
+            console.error('Error saving korisnik', error);
           });
-
-        }, error => {
-          console.error('Error saving turista', error);
-        });
-
-      }, error => {
-        console.error('Error saving korisnik', error);
-      });
-
-    } else {
-      this.paymentForm.markAllAsTouched();
-    }
+    
+        } else {
+          this.paymentForm.markAllAsTouched();
+        }
+      }
   }
-}

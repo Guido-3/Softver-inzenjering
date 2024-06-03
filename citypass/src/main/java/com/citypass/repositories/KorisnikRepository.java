@@ -5,10 +5,7 @@ import com.citypass.models.Korisnik;
 import com.citypass.response.DBOperationResponse;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,7 +102,7 @@ public class KorisnikRepository {
         try {
             con = DButil.open();
             String sql = "INSERT INTO korisnik (ime, prezime, email, br_telefona, drzava_ime, admin) VALUES (?, ?, ?, ?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement(sql);
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, korisnik.getIme());
             ps.setString(2, korisnik.getPrezime());

@@ -106,7 +106,10 @@
         <p><strong>Date From:</strong> {{ buyForm.get('dateFrom')?.value }}</p>
         <p><strong>Date To:</strong> {{ buyForm.get('dateTo')?.value }}</p>
       </div>
-      <button class="btn btn-primary mt-3" ngxPrint printSectionId="passCard">Download Pass</button>
+      <div class="button-container mt-3">
+        <button class="btn btn-generate-pdf" (click)="generatePDF()">GENERATE PDF</button>
+      </div>
     </div>
+
   </div>
   

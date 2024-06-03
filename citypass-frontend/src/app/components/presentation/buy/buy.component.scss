@@ -44,7 +44,7 @@ form {
         font-weight: bold;
         //align-items: center;
         padding: 25px;
-        margin-left: 200px;
+        margin-left: 170px;
         margin-bottom: 50px;
 
         &:hover {
@@ -52,12 +52,21 @@ form {
             border-color: #be0761;
         }
     }
+    .btn-success {
+        font-size: 1rem;
+        font-weight: bold;
+        //align-items: center;
+        padding: 25px;
+        margin-left: 120px;
+        margin-bottom: 50px;
+  
+    }
 }
 .pass-card {
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 10px;
+    //border-radius: 10px;
     max-width: 400px;
     margin: 0 auto;
     color: #f0f0f0;
@@ -76,7 +85,45 @@ form {
       margin-bottom: 20px;
     }
   }
-  
+
+// .button-container {
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   margin-top: 10px;
+
+//   margin-left: 170px;
+//   margin-bottom: 50px;
+
+//   .btn {
+//     justify-content: center;
+//     margin: 0 5px;
+//     background-color: #fd8f00;
+//     border-color: #fd8f00;
+//     font-size: 1rem;
+//     font-weight: bold;
+//     //align-items: center;
+//     padding: 25px;
+//   }
+// }
+.btn-generate-pdf {
+  background-color: #f39c12; /* Narandžasta boja */
+  border-color: #f39c12; /* Narandžasta boja */
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  color: white;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: 50px; /* Okrugli uglovi */
+  margin-left: 180px;
+
+  &:hover {
+    background-color: #e67e22; /* Tamnija narandžasta boja */
+    border-color: #e67e22; /* Tamnija narandžasta boja */
+  }
+}
+
   @media print {
     @page {
       size: landscape; // Postavlja PDF u landscape režim
