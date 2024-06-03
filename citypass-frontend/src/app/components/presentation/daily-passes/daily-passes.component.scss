@@ -241,7 +241,7 @@ h2 {
 }
 
 .full-width-card:hover {
-    transform: scale(1.05); /* Povećavamo veličinu kartice prilikom hovera */
+    transform: scale(1.05) !important; /* Povećavamo veličinu kartice prilikom hovera */
 }
 
 .card-img-top {

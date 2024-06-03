@@ -30,7 +30,7 @@ export class DailyPassesComponent {
     { class: 'fa-solid fa-building-columns', text: 'Museums' },
     { class: 'class="fa-solid fa-wifi', text: 'WiFi' },
     { class: 'fa-solid fa-fish', text: 'Aquarium' },
-    { class: 'fa-solid fa-cable-car', text: 'Cable Car' },
+    { class: 'fa-light fa-cable-car', text: 'Cable Car' },
     { class: 'fa-solid fa-bus-simple', text: 'Public transport' },
     { class: 'fa-solid fa-archway', text: 'Fortress' }
   ];
