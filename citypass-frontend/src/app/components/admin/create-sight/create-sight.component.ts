@@ -1,50 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CreateSightService } from 'src/app/services/create-sight.service';
+import { Router } from '@angular/router';
+import { SightsService } from 'src/app/services/sights.service';
+ // Pretpostavimo da postoji SightService za komunikaciju sa backendom
 
 @Component({
   selector: 'app-create-sight',
   templateUrl: './create-sight.component.html',
-  styleUrls: ['./create-sight.component.scss']
+  // styleUrls: ['./create-sight.component.css']
 })
-export class CreateSightComponent implements OnInit{
+export class CreateSightComponent implements OnInit {
   sightForm: FormGroup;
   submitted = false;
-  successMessage : string = '';
+  successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private createSightService: CreateSightService) {
-    this.sightForm = this.fb.group({
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private sightService: SightsService
+  ) {
+    this.sightForm = this.formBuilder.group({
       ime: ['', Validators.required],
       opis: ['', Validators.required],
       slika: ['', Validators.required],
-      admin: ['', Validators.required],
+      admin: ['', Validators.required]
     });
   }
 
-  ngOnInit(): void {
-      
-  }
-  
-  get formControls() {
-    return this.sightForm.controls;
-  }
+  ngOnInit(): void {}
+
+  get formControls() { return this.sightForm.controls; }
 
   onSubmit(): void {
     this.submitted = true;
-    this.successMessage = '';
-    this.errorMessage = '';
-
-    if ( this.sightForm.valid) {
-      this.createSightService.createSight(this.sightForm.value).subscribe(
-        response => {
-          this.successMessage = 'Sight created successfully';
-        },
-        error => {
-          this.errorMessage = 'Error'
-        }
-      );
+    if (this.sightForm.invalid) {
+      return;
     }
-  }
 
+    this.sightService.createZnamenitost(this.sightForm.value).subscribe({
+      next: (response) => {
+        this.successMessage = 'Znamenitost je uspješno kreirana!';
+        this.errorMessage = '';
+        this.sightForm.reset();
+        this.submitted = false;
+      },
+      error: (error) => {
+        this.errorMessage = 'Došlo je do greške prilikom kreiranja znamenitosti.';
+        this.successMessage = '';
+      }
+    });
+  }
 }

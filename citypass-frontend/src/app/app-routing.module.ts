@@ -5,6 +5,11 @@ import { ContactComponent } from './components/presentation/contact/contact.comp
 import { DailyPassesComponent } from './components/presentation/daily-passes/daily-passes.component';
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { ReservationsComponent } from './components/admin/reservations/reservations.component';
+import { SightsComponent } from './components/admin/sights/sights.component';
+import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
+import { EditSightComponent } from './components/admin/edit-sight/edit-sight.component';
+import { HttpClientModule } from '@angular/common/http';
 // import { RegisterComponent } from './components/auth/register/register.component';
 
 const routes: Routes = [
@@ -12,12 +17,20 @@ const routes: Routes = [
   { path: "about", component: ContactComponent },
   { path: "daily-passes", component: DailyPassesComponent},
   { path: "buy", component: BuyComponent},
-  { path: "admin", component: LoginComponent},
+  { path: "admin/reservations", component: ReservationsComponent},
+  { path: "admin/sights", component: SightsComponent},
+  { path: "admin/sights/create", component: CreateSightComponent},
+  { path: "admin/sights/edit/:id", component: EditSightComponent},
+
+
+
   // { path: "register", component: RegisterComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    HttpClientModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

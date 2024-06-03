@@ -6,44 +6,45 @@
     <title>Bootstrap Form</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mt-5">
-        <h2>Kreirajte znamenitost</h2>
-        <!--
+<body style="background: white; color: #343a40; font-family: 'Catamaran', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';">
+    <div class="container mt-5 mb-5" style="max-width: 600px; padding: 40px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center;">Kreirajte znamenitost</h2>
         <form [formGroup]="sightForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="ime">Ime:</label>
-                <input type="text" class="form-control" id="ime" formControlName="ime" placeholder="Ime znamenitosti">
-                <div *ngIf="submitted && formControls.ime.errors" class="text-danger">
-                    <div *ngIf="formControls.ime.errors.required">Ime je obavezno.</div>
-                </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="ime" style="font-weight: bold;">Ime:</label>
+            <input type="text" class="form-control" id="ime" formControlName="ime" placeholder="Ime znamenitosti" style="padding: 0.375rem 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <div *ngIf="submitted && formControls['ime'].errors" class="text-danger">
+              <div *ngIf="formControls['ime'].errors['required']">Ime je obavezno.</div>
             </div>
-            <div class="form-group">
-                <label for="opis">Opis: </label>
-                <input type="text" class="form-control" id="opis" formControlname="opis" placeholder="Unesite opis">
-                <div *ngIf="submitted && formControls.opis.errors" class="text-danger">
-                    <div *ngIf="formControls.opis.errors.required">Opis je obavezan.</div>
-                </div>
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="opis" style="font-weight: bold;">Opis:</label>
+            <input type="text" class="form-control" id="opis" formControlName="opis" placeholder="Unesite opis" style="padding: 0.375rem 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <div *ngIf="submitted && formControls['opis'].errors" class="text-danger">
+              <div *ngIf="formControls['opis'].errors['required']">Opis je obavezan.</div>
             </div>
-            <div class="form-group">
-                <label for="slika">Unesite sliku: </label>
-                <input className="form-control" type="file" name="slika"  formControlName="slika"/>
-                <div *ngIf="submitted && formControls.slika.errors" class="text-danger">
-                    <div *ngIf="formControls.slika.errors.required">Opis je obavezan.</div>
-                </div>
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="slika" style="font-weight: bold;">URL slike:</label>
+            <input type="text" class="form-control" id="slika" formControlName="slika" placeholder="Unesite URL slike" style="padding: 0.375rem 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <div *ngIf="submitted && formControls['slika'].errors" class="text-danger">
+              <div *ngIf="formControls['slika'].errors['required']">URL slike je obavezan.</div>
             </div>
-            <div class="form-group">
-                <label for="admin">Ko kreira znamenitost: </label>
-                <input className="form-control" type="file" name="admin" formControlName="admin"/>
-                <div *ngIf="submitted && formControls.admin.errors" class="text-danger">
-                    <div *ngIf="formControls.admin.errors.required">Admin je obavezan.</div>
-                </div>
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="admin" style="font-weight: bold;">Ko kreira znamenitost:</label>
+            <input type="text" class="form-control" id="admin" formControlName="admin" placeholder="Ime admina" style="padding: 0.375rem 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <div *ngIf="submitted && formControls['admin'].errors" class="text-danger">
+              <div *ngIf="formControls['admin'].errors['required']">Admin je obavezan.</div>
             </div>
-            <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5 text-center">SUBMIT</button>
+          </div>
+          <button type="submit" class="btn btn-primary btn-xl rounded-pill mt-5 text-center" style="background-color: #ee0979; border-color: #ee0979; font-size: 1rem; font-weight: bold; padding: 25px; margin-left: 210px; margin-bottom: 50px;">SUBMIT</button>
         </form>
-    -->
+      
+        <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
     </div>
-
+      
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

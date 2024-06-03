@@ -14,5 +14,15 @@ export class SightsService {
   getSights(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}`);
   }
+  createZnamenitost(znamenitost: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}`, znamenitost);
+  }
+  getZnamenitost(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  updateZnamenitost(id: string, data: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, data);
+  }
 
 }

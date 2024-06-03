@@ -11,6 +11,13 @@ import { DailyPassesComponent } from './components/presentation/daily-passes/dai
 import { BuyComponent } from './components/presentation/buy/buy.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { CommonModule } from '@angular/common';
+import { SightsComponent } from './components/admin/sights/sights.component';
+import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
+import { ReservationsComponent } from './components/admin/reservations/reservations.component';
+import { EditSightComponent } from './components/admin/edit-sight/edit-sight.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SightsService } from './services/sights.service';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -24,14 +31,21 @@ import { HttpClientModule } from '@angular/common/http';
     DailyPassesComponent,
     BuyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SightsComponent,
+    CreateSightComponent,
+    ReservationsComponent,
+    EditSightComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SightsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

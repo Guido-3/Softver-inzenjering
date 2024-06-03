@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reservations',

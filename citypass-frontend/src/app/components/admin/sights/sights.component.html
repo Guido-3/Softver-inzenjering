@@ -10,11 +10,10 @@
 <body>
 
 <div class="container my-4">
-    <h2>Znamenitosti</h2>
 
     <div class="row mb-3">
-        <div class="col">
-            <a class="btn btn-primary me-1" href="/admin/sights/create" role="button">Dodaj Znamenitost</a>
+        <div class="col d-flex justify-content-center w-100">
+            <a class="btn btn-primary btn-xl rounded-pill mt-5 text-center" style="background-color: #ee0979; border-color: #ee0979; font-size: 1rem; font-weight: bold; padding: 25px;  margin-bottom: 50px;" href="/admin/sights/create" role="button">DODAJ ZNAMENITOST</a>
         </div>
     </div>
 
@@ -24,6 +23,7 @@
                 <th>ID</th>
                 <th>Naziv</th>
                 <th>Opis</th>
+                <th>Slika</th>
             </tr>
         </thead>
         <tbody>
@@ -33,9 +33,18 @@
                 <td>{{znamenitost.opis}}</td>
                 <td><img class="card-img-top" [src]="znamenitost.slika" alt="Card image cap"></td>
                 <td style="width: 10px">
-                    <a class="btn btn-primary btn-sm me-1 mb-2">Uredi</a>
-                    <button type="button" class="btn btn-danger btn-sm">Izbriši</button>
+                    <a [routerLink]="['/admin/sights/edit', znamenitost.id]" class="btn btn-primary btn-sm me-1 mb-2" 
+                       style="background-color: rgba(2,68,157,255); border-color: rgba(2,68,157,255); border-radius: 12px; font-weight: bold;">
+                        Uredi
+                    </a>
+                    <button type="button" class="btn btn-danger btn-sm" 
+                            (click)="deleteZnamenitost(znamenitost.id)" 
+                            style="border-radius: 12px; font-weight: bold;">
+                        Izbriši
+                    </button>
                 </td>
+                
+                
             </tr>
         </tbody>
     </table>
