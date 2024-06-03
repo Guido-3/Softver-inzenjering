@@ -1,0 +1,120 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Sprečava horizontalno skrolovanje tela stranice */
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  
+  header {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Osigurava da nema skrolovanja unutar header-a */
+  }
+  
+  .header-image {
+    //background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.4)), url('/assets/images/header.jpg');
+    background-image: url('/assets/images/header.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoomIn 5s ease forwards;
+    position: relative;
+  }
+  
+  .mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparentna crna maska */
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: zoomIn 5s ease forwards;
+  }
+  
+  .text-white {
+    text-align: center;
+    color: white;
+  }
+  
+  .header-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  
+  .header-content h1 {
+    margin-bottom: 20px;
+    font-size: 4rem;
+    letter-spacing: 2px; /* Povećan razmak između slova */
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .header-content .btn {
+    font-size: 1.5rem;
+    background-color: rgba(2,68,157,255) !important;
+    border: 0;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .header-content .btn:hover {
+    background-color: #6497b1 !important;
+    color: white !important;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .header-content h1 {
+      font-size: 3rem;
+    }
+  
+    .header-content .btn {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      font-size: 2rem;
+    }
+  
+    .header-content h1 {
+      font-size: 2rem;
+    }
+  
+    .header-content .btn {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header-content h1 {
+      font-size: 1.5rem;
+    }
+  
+    .header-content .btn {
+      font-size: 0.8rem;
+    }
+ }
+  
+  
