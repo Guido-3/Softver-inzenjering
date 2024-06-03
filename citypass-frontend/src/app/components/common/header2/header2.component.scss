@@ -62,12 +62,17 @@ html, body {
   }
   
   .header-content .btn {
-    font-size: 1.5rem;
-    background-color: rgba(2,68,157,255) !important;
-    border: 0;
+    font-size: 1.75rem; /* Povećan font */
+    background-color: transparent !important; /* Transparentna pozadina */
+    border: solid;
     color: white;
     font-weight: bold;
-  }
+    border-radius: 25px; /* Veće zaobljenje */
+    padding: 15px 30px; /* Povećanje dimenzija dugmeta */
+    font-family: 'Catamaran', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; /* Lepši font */
+}
+
+
   
   .header-content .btn:hover {
     background-color: #6497b1 !important;
