@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Znamenitosti</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-4">
+    <h2>Znamenitosti</h2>
+
+    <div class="row mb-3">
+        <div class="col">
+            <a class="btn btn-primary me-1" href="/admin/sights/create" role="button">Dodaj Znamenitost</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naziv</th>
+                <th>Opis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let znamenitost of znamenitosti">
+                <td>{{znamenitost.id}}</td>
+                <td>{{znamenitost.ime}}</td>
+                <td>{{znamenitost.opis}}</td>
+                <td><img class="card-img-top" [src]="znamenitost.slika" alt="Card image cap"></td>
+                <td style="width: 10px">
+                    <a class="btn btn-primary btn-sm me-1 mb-2">Uredi</a>
+                    <button type="button" class="btn btn-danger btn-sm">Izbriši</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS and dependencies (optional, for additional functionality) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
