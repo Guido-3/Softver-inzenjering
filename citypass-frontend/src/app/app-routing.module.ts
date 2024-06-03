@@ -10,10 +10,11 @@ import { CreateSightComponent } from './components/admin/create-sight/create-sig
 import { EditSightComponent } from './components/admin/edit-sight/edit-sight.component';
 import { SightsComponent } from './components/admin/sights/sights.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 // import { RegisterComponent } from './components/auth/register/register.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
   { path: "about", component: ContactComponent },
   { path: "daily-passes", component: DailyPassesComponent},
   { path: "buy", component: BuyComponent},

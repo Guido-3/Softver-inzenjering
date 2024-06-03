@@ -13,7 +13,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
-
+import { Header2Component } from './components/common/header2/header2.component';
+import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SightsComponent } from './components/admin/sights/sights.component';
 import { CreateSightComponent } from './components/admin/create-sight/create-sight.component';
@@ -21,12 +22,13 @@ import { ReservationsComponent } from './components/admin/reservations/reservati
 import { EditSightComponent } from './components/admin/edit-sight/edit-sight.component';
 import { CommonModule } from '@angular/common';
 import { SightsService } from './services/sights.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    HeaderComponent,
+    Header2Component,
     FooterComponent,
     DailyPassesComponent,
     BuyComponent,
@@ -35,7 +37,8 @@ import { SightsService } from './services/sights.service';
     SightsComponent,
     CreateSightComponent,
     ReservationsComponent,
-    EditSightComponent
+    EditSightComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import { SightsService } from './services/sights.service';
     ReactiveFormsModule,
     NgxPrintModule,
     FormsModule,
-    CommonModule 
+    CommonModule
   ],
   providers: [SightsService],
   bootstrap: [AppComponent]

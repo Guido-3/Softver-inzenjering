@@ -5,96 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centrirani Div</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <style>
-        .bg-circle {
-            width: 100px; /* širina kruga */
-            height: 100px; /* visina kruga */
-            background-color: red; /* boja kruga */
-            border-radius: 50%; /* krug */
-        }
-        .slika{
-            border-radius: 10px;
-            height: 300px;
-        }
-        .slika3{
-            border-radius: 10px;
-            height: 400px;
-        }
-    </style> -->
 </head>
 <body>
+    <div class="quote-container">
+        <h1 class="title">The Pearl of Creation</h1>
+        <h2 class="author">LORD BYRON</h2>
+        <p class="quote">
+            “At the moment of the creation of our planet, the most beautiful merging of land and sea occurred at the Montenegrin seaside ... When the pearls of nature were sown, abundance was strewn all over this area.”
+        </p>
+    </div>
 
-     <!-- <div class="container mt-5 ">
-        <div>
-            <div class="container text-white py-5">
-                <div class="text-dark text-center mb-4">
-                    <h2 class="text">Kotor Fortress</h2>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center">
-                        <img src="../../../../assets/images/slika7.png" class="slika" />               
-                    </div>
-                    <div class="text-dark col-md-6">
-                        <p>Nestled in the heart of Montenegro, the historic city of Kotor boasts one of the most impressive and well-preserved fortification systems in the Mediterranean. The Walls of Kotor, also known as the Kotor Fortress, are a monumental feat of architecture and engineering that have stood the test of time, offering a glimpse into the city’s storied past.
-
-                            Spanning approximately 4.5 kilometers (2.8 miles) and rising to an elevation of 260 meters (853 feet) above sea level, the walls encircle the Old Town of Kotor and climb steeply up the slopes of Mount Lovćen. Construction of the fortifications began in the 9th century and continued through various periods, reaching its zenith during the Venetian rule from the 15th to the 17th century.</p>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="text-dark col-md-6">
-                        <p>The walls are punctuated by bastions, towers, and gates, each with its own unique history and significance. The Sea Gate, the main entrance to the Old Town, dates back to 1555 and serves as a testament to the city’s maritime heritage. The River Gate, or the North Gate, offers another impressive entrance, while the Gurdic Gate, or the South Gate, is renowned for its strategic importance.
-
-                            One of the most striking features of the Kotor Fortress is the San Giovanni Castle, perched high above the city. A steep and winding path of over 1,300 steps leads visitors to this vantage point, offering breathtaking panoramic views of the Bay of Kotor and the surrounding mountains. The climb is challenging but rewarding, as the view from the top is truly unparalleled.</p>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img src="../../../../assets/images/slika8.png" class="slika" />               
-                    </div>
-                </div>
+    <div class="container-fluid my-4 p-4 bg-light rounded">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-5 mb-4">
+                <img src="assets/images/unesco.jpg" alt="Kotor Bay" class="img-fluid rounded">
+            </div>
+            <div class="col-12 col-md-5">
+                <h1 class="main-title">Kotor - UNESCO heritage site</h1>
+                <h2 class="subtitle">YOUR STARTING POINT FOR THE CABLE CAR RIDE</h2>
+                <p class="description">
+                    Nestled between imposing mountains and the enchanting Boka Bay, where the peaks of Lovćen elegantly mirror the sparkling waters, lies the vibrant core of the Bay - Kotor.
+                    <br><br>
+                    With its medieval fortifications tracing back to antiquity, this UNESCO World Heritage site has stood the test of time since 169 BCE. Strolling through the winding streets of Kotor, you'll step into a truly historical time capsule, spanning from the era of ancient Rome to the ravages of World War II.
+                    <br><br>
+                    Proudly adorned with the prestigious title of "Best European Destination 2019," Kotor is an unmissable gem, revered as a captivating cruising port and consistently ranked among the top "hidden cities" and must-see destinations in this corner of Europe. Discover the allure of Kotor - a captivating link to the past.
+                    <br><br>
+                    <strong>#MustSee in Kotor</strong>
+                </p>
             </div>
         </div>
-        <div>
-            <div class="container text-white py-5">
-                <div class="text-dark text-center mb-4">
-                    <h2 class="text">Kotor Fortress</h2>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center">
-                        <img src="../../../../assets/images/slika9.png" class="slika" />               
-                    </div>
-                    <div class="text-dark col-md-6">
-                        <p>Nestled within the historic city walls of Kotor, Montenegro, the Kotor Museum, also known as the Maritime Museum of Montenegro, offers a captivating journey through the region's rich maritime heritage and cultural history. Housed in the elegant Baroque Grgurina Palace, the museum stands as a testament to Kotor’s long-standing relationship with the sea and its significant role in Adriatic maritime history.
+    </div>
+    
+    <div class="slider-container">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let slide of slides">
+              <img [src]="slide.img" alt="Image">
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+    </div>
 
-                            The museum's collection includes an impressive array of artifacts, ranging from ancient navigational instruments and ship models to intricate maritime maps and detailed records of naval battles. Each exhibit tells a unique story of the city's seafaring past, showcasing the skills and craftsmanship of Kotor's sailors, shipbuilders, and navigators.</p>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="text-dark col-md-6">
-                        <p>Visitors to the museum can explore several floors of meticulously curated exhibits. The ground floor features a collection of historic ship models, providing insight into the evolution of naval architecture and the types of vessels that once sailed the Adriatic Sea. The first floor houses an array of navigational tools and equipment, highlighting the technological advancements that made long-distance sea travel possible.
-
-                            One of the museum's most fascinating sections is dedicated to the lives of Kotor's illustrious sea captains and their daring exploits. Portraits, personal belongings, and detailed logs offer a glimpse into the lives of these maritime adventurers and their contributions to the city's prosperity.</p>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img src="../../../../assets/images/slika10.png" class="slika" />               
-                    </div>
-                </div>
+    <div class="container-fluid2 my-4 p-4 bg-light rounded">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-5">
+                <h1 class="main-title2">Old town Kotor</h1>
+                <h2 class="subtitle2">22 CENTURIES OLD</h2>
+                <p class="description2">
+                    Tucked away in the very heart of the city, right by the main harbor, and embraced
+                    by the historic city walls.
+                    Exploring its enchanting streets won't require much time, yet every alleyway,
+                    square, restaurant, museum, and gallery will captivate your senses.
+                    <br><br>
+                    Prepare to be dazzled by the magnificent Square of Arms, the awe-inspiring
+                    Cathedral of St. Tryphon, the serene Orthodox Church of St. Nicholas, and the
+                    ancient 12th-century Church of St. Luke.
+                    <br><br>
+                </p>
+            </div>
+            <div class="col-12 col-md-5 mb-4 oldtown">
+                <img src="assets/images/slika14.jpg" alt="Kotor Bay" class="img-fluid2 rounded">
             </div>
         </div>
-    </div>  -->
-    <div class="container mt-5">
-        <div *ngIf="znamenitosti && znamenitosti.length!=0">
-          <ul>
-            <li *ngFor="let znamenitost of znamenitosti">
-              {{ znamenitost.ime }} - {{ znamenitost.opis }}
-            </li>
-          </ul>
-        </div>
-        <div *ngIf="!znamenitosti || znamenitosti.length==0">
-          <p>Nema znamenitosti za prikaz.</p>
-        </div>
-      </div>
-      
+    </div>
 
-</body> 
+
+    <div class="stats-container">
+        <div class="stat" *ngFor="let stat of stats">
+          <span class="count">{{ stat.value | number }}</span>
+          <span class="label">{{ stat.label }}</span>
+        </div>
+    </div>
+
+    
+
+    <div class="faq-container">
+        <div class="faq-title">FREQUENTLY ASKED QUESTIONS ABOUT THE KOTOR PASS</div>
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label class="faq-item-title" for="faq1">WHAT IS THE KOTOR PASS?</label>
+            <div class="faq-item-content">The Kotor City Pass is an all-inclusive ticket for all available sights in Kotor. Learn more about all included sights, such as Kotor Fortress, Our Lady of the Rocks, or Kotor Cable car.</div>
+        </div>
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label class="faq-item-title" for="faq2">WHAT ARE THE ADVANTAGES OF THE KOTOR CITY PASS?</label>
+            <div class="faq-item-content">The Kotor City Pass offers convenience, savings, and flexibility, providing access to many popular attractions without the need for separate tickets.</div>
+        </div>
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label class="faq-item-title" for="faq3">HOW MUCH IS THE KOTOR CITY PASS?</label>
+            <div class="faq-item-content">The price of the Kotor City Pass varies depending on the season and the number of days.</div>
+        </div>
+        <div class="faq-item">
+            <input type="checkbox" id="faq4">
+            <label class="faq-item-title" for="faq4">HOW DOES THE KOTOR PASS WORK?</label>
+            <div class="faq-item-content">The Kotor City Pass is valid for the selected dates and allows access to all available attractions. After the expiration date, the KOTOR Pass card cannot be used.</div>
+        </div>
+    </div>
+
+    <div class="custom-container">
+        <div class="row custom-row">
+            <div class="col-md-4 custom-column">
+                <img src="assets/images/opp.png" alt="Placeholder Image 1" class="img-fluid custom-img">
+            </div>
+            <div class="col-md-4 custom-column">
+                <img src="assets/images/ktologo.png" alt="Placeholder Image 2" class="img-fluid custom-img">
+            </div>
+            <div class="col-md-4 custom-column">
+                <img src="assets/images/mnee.png" alt="Placeholder Image 3" class="img-fluid custom-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="map-container mb-5">
+        <div id="map"></div>
+    </div>
+</body>
 </html>
-
-

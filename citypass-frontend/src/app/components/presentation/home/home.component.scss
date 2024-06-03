@@ -12,3 +12,460 @@
     border-radius: 10px;
     height: 400px;
 }
+
+body{
+    overflow: hidden;
+}
+
+
+.quote-container {
+    text-align: center;
+    padding: 50px;
+    font-family: "Nunito Sans", sans-serif !important;
+}
+
+.title {
+    font-size: 2em;
+    color: #174B8B; /* Dark blue */
+    font-weight: 700; /* Bold */
+    margin: 10px;
+}
+
+.author {
+    font-size: 1.2em;
+    color: #7A869A; /* Light grey-blue */
+    margin: 10px 0;
+    font-weight: 700; /* Bold */
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-size: 1em;
+    color: #7A869A; /* Light grey-blue */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quote-container{
+        padding-bottom: 30px;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+
+    .author {
+        font-size: 1em;
+    }
+
+    .quote {
+        font-size: 0.9em;
+        padding: 0 10px;
+    }
+}
+
+
+
+.container-fluid {
+    padding: 20px; /* Adjusted padding for the container */
+    background-color: #ecf8ff !important; /* Light blue background for the container */
+    border-radius: 10px;
+    margin-bottom: 0 !important;
+    border-top: solid #174B8B;;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    width: 100%; /* Ensure image scales properly */
+    max-height: 480px; /* Adjusted max height */
+    max-width: 480px;
+}
+
+.main-title {
+    font-size: 1.5em; /* Adjusted font size */
+    color: #174B8B; /* Dark blue */
+    margin: 0;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1em; /* Adjusted font size */
+    color: #7A869A; /* Light grey-blue */
+    margin: 15px 0; /* Adjusted margin */
+}
+
+.description {
+    font-size: 1em; /* Adjusted font size */
+    color: #7A869A; /* Light grey-blue */
+    line-height: 1.3; /* Adjusted line spacing */
+}
+  
+  
+  
+
+.slider-container {
+    width: 100%;
+    height: 450px; /* Adjust slider height as needed */
+    overflow: hidden; /* Ensures slider content doesn't overflow */
+    position: relative; /* Necessary for absolute positioning of buttons */
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background: #fff;
+    height: 100%; /* Ensures slide occupies full height of slider */
+    width: auto; /* Adjust slide width */
+    flex-shrink: 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the entire space without cropping */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Styles for navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white; /* Button icon color */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    border-radius: 50%; /* Rounded shape of button */
+    width: 30px; /* Button width */
+    height: 30px; /* Button height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Button positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 12;
+    cursor: pointer; /* Cursor to indicate interactivity */
+}
+
+.swiper-button-next {
+    right: 10px; /* Position button to the right */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Position button to the left */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background color on hover */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px; /* Increased icon size */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 300px; /* Adjust slider height for smaller screens */
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 25px; /* Smaller button width */
+        height: 25px; /* Smaller button height */
+    }
+  
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 16px; /* Smaller icon size */
+    }
+
+}
+
+
+
+.container-fluid2 {
+    padding: 20px; /* Adjusted padding for the container */
+    background-color: #e6f0fa; /* Light blue background for the container */
+    border-radius: 10px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.img-fluid2 {
+    max-width: 100%;
+    height: auto;
+    width: 100%; /* Ensure image scales properly */
+    max-height: 400px; /* Adjusted max height */
+    max-width: 400px;
+}
+
+.main-title2 {
+    font-size: 1.5em; /* Adjusted font size */
+    color: #174B8B; /* Dark blue */
+    margin: 0;
+    font-weight: bold;
+}
+
+.subtitle2 {
+    font-size: 1em; /* Adjusted font size */
+    color: #7A869A; /* Light grey-blue */
+    margin: 15px 0; /* Adjusted margin */
+}
+
+.description2 {
+    font-size: 1em; /* Adjusted font size */
+    color: #7A869A; /* Light grey-blue */
+    line-height: 1.3; /* Adjusted line spacing */
+    justify-content: left;
+
+}
+
+.oldtown {
+    margin-left: 50px !important;
+    max-height: 400px !important; /* Adjusted max height */
+    max-width: 400px !important;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .oldtown {
+        justify-content: center;
+        margin: 0 auto !important; /* Center the image horizontally */
+    }
+    .col-12 {
+        text-align: center; /* Center the text content */
+    }
+}
+
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e3f66;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .stats-container .stat {
+    flex: 1 1 15%; /* Adjust width to fit 5 items in one row */
+    min-width: 100px; /* Minimum width to ensure responsiveness */
+    margin: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .stats-container .stat .count {
+    display: block;
+    font-size: 3em;
+  }
+  
+  .stats-container .stat .label {
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      padding: 10px 0;
+    }
+    .stats-container .stat {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+    .stats-container .stat .count {
+      font-size: 1.8em;
+    }
+    .stats-container .stat .label {
+      font-size: 0.7em;
+    }
+  }
+  
+
+  .faq-container {
+    background-color: #e6f0fa;
+    width: 100%; /* Puna širina ekrana */
+    margin: 0; /* Gornja margina 0 */
+    padding: 20px;
+    background-color: #ffffff; /* Bela pozadina div elementa */
+    color: #1c2e4a; /* Tamno plava boja za tekst */
+    box-sizing: border-box;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.faq-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1c2e4a; /* Tamno plava boja za naslov */
+}
+
+.faq-item {
+    margin: 0 auto 15px; /* Centriranje stavki */
+    max-width: 800px; /* Maksimalna širina stavki */
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    background: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1c2e4a; /* Tamno plava boja za tekst naslova */
+    border-bottom: 2px solid #1c2e4a; /* Tamno plavi podvučeni border */
+}
+
+.faq-item-title::after {
+    content: '▼';
+}
+
+.faq-item input:checked + .faq-item-title::after {
+    content: '▲';
+}
+
+.faq-item-content {
+    display: none;
+    margin-top: 5px;
+    padding: 10px 20px;
+    border-left: 3px solid #1c2e4a; /* Tamno plavi border za sadržaj */
+    background: rgba(28, 46, 74, 0.05); /* Svetlija transparentna plava za sadržaj */
+    border-radius: 5px;
+    color: #1c2e4a; /* Tamno plava boja za tekst sadržaja */
+}
+
+.faq-item input:checked ~ .faq-item-content {
+    display: block;
+}
+
+@media (max-width: 768px){
+    .faq-container{
+        margin-bottom: 10px;
+    }
+}
+
+
+
+.custom-container {
+    background-color: white; /* Plava boja */
+    padding: 10px;
+}
+
+.custom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Omogućava prelamanje redova */
+}
+
+.custom-column {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Omogućava punu širinu kolone */
+}
+
+.custom-img {
+    width: 100%;
+    height: auto; /* Automatska visina da zadrži proporcije */
+    max-height: 100px; /* Maksimalna visina slike */
+    object-fit: contain; /* Omogućava da se cela slika prikazuje unutar kontejnera */
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .custom-column {
+        width: 33.33%; /* Podela na tri kolone za veće ekrane */
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-img {
+        max-height: 75px; /* Smanjena maksimalna visina za manje ekrane */
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-img {
+        max-height: 50px; /* Još manja maksimalna visina za najmanje ekrane */
+    }
+}
+  
+  
+  
+.map-container {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center; /* Centriranje po horizontali */
+    align-items: center; /* Centriranje po vertikali */
+    height: calc(100vh - 120px); /* Visina kontejnera da bude visina prozora minus margin-top */
+    width: 100%; /* Širina kontejnera da bude širina prozora */
+    box-sizing: border-box;
+}
+
+#map {
+    height: 100%; /* Visina mape da bude 100% kontejnera */
+    width: 100%; /* Širina mape da bude 100% kontejnera */
+    max-width: 800px; /* Maksimalna širina mape */
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        padding: 10px; /* Manji padding za manje ekrane */
+        margin-top: 0; /* Uklanja margin-top za manje ekrane */
+        height: 100vh; /* Visina kontejnera da bude visina prozora */
+    }
+    
+    #map {
+        max-width: 100%; /* Uklanja maksimalnu širinu za manje ekrane */
+        height: calc(100vh - 20px); /* Visina mape da bude visina prozora minus padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .map-container {
+        padding: 5px; /* Još manji padding za najmanje ekrane */
+        margin-top: 0; /* Uklanja margin-top za najmanje ekrane */
+        height: 100vh; /* Visina kontejnera da bude visina prozora */
+    }
+    
+    #map {
+        width: 100%; /* Širina mape da bude 100% kontejnera za najmanje ekrane */
+        height: calc(100vh - 10px); /* Visina mape da bude visina prozora minus padding */
+        max-width: none; /* Uklanja maksimalnu širinu */
+        max-height: none; /* Uklanja maksimalnu visinu */
+ }
+}
