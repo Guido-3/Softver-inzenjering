@@ -136,7 +136,7 @@ export class HomeComponent implements OnInit,AfterViewInit{
   }
 
   animateCount(stat: any) {
-    const duration = 1000; // Duration of animation in milliseconds
+    const duration = 2000; // Duration of animation in milliseconds
     const frameDuration = 1000 / 30; // 60 frames per second
     const totalFrames = duration / frameDuration;
     const increment = stat.target / totalFrames;
